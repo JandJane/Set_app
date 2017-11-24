@@ -1,0 +1,244 @@
+#alert_win {
+  margin-right: 10px;
+  padding: 15px;
+  border: 1px solid #c1d8e1;
+  border-radius: 4px;
+  color: #5d5d5d;
+  background-color: #d0e7f0;
+}
+
+
+
+body {
+  background-image: url(../img/back.gif);
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем поля */
+  -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+  -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+  -ms-user-select: none;
+ 
+}
+
+p, div {
+	font: normal normal normal 18px Comic Sans MS;
+}
+
+a {
+    font: normal normal normal 14px Comic Sans MS;
+}
+
+
+
+
+#rules {
+  position: absolute;
+  top: -610px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1074;&#1077;&#1088;&#1093;&#1091;*/
+  left: 34px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1083;&#1077;&#1074;&#1072;*/
+  width: 705px;
+  height: 500px;
+  border: 7px double #d7973d;
+  border-radius: 20px;
+  color: #5d5d5d;
+  background-color: #f7fbfb;
+  opacity: 0.99;
+  box-shadow: 4px 4px 5px rgba(20, 20, 20, 0.6);
+  padding-left: 10px;
+  transition-property: top;
+  transition-duration: 0.7s;
+}
+
+#result {
+  position: absolute;
+  top: -455px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1074;&#1077;&#1088;&#1093;&#1091;*/
+  left: 270px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1083;&#1077;&#1074;&#1072;*/
+  width: 350px;
+  height: 200px;
+  border: 7px double #d7973d;
+  border-radius: 20px;
+  color: #5d5d5d;
+  background-color: #f7fbfb;
+  opacity: 0.95;
+  padding: 10 px;
+  padding-left: 10px;
+  box-shadow: 6px 6px 5px rgba(20, 20, 20, 0.6);
+  transition-property: top;
+  transition-duration: 0.5s;
+}
+
+#rating {
+  position: absolute;
+  top: -605px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1074;&#1077;&#1088;&#1093;&#1091;*/
+  left: 195px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1083;&#1077;&#1074;&#1072;*/
+  width: 460px;
+  height: 500px;
+  border: 7px double #d7973d;
+  border-radius: 20px;
+  color: #5d5d5d;
+  background-color: #f7fbfb;
+  opacity: 0.99;
+  box-shadow: 4px 4px 5px rgba(20, 20, 20, 0.6);
+  padding-left: 10px;
+  transition-property: top;
+  transition-duration: 0.7s;
+}
+
+#header {
+  width: 953px;
+  height: 87px;
+  background-image: url(../img/head.png);
+  padding-top: 13px;
+  margin-top: 0;
+  margin-left: 0;
+
+}
+
+#chose {
+  width: 140px;
+  height: 70px;
+  background-image: url(../img/chose.gif);
+  margin-top: -13px;
+  display: none;
+  padding-top: 8px;
+  padding-left: 10px;
+    
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.leftimg {
+    float:left; /* &#1042;&#1099;&#1088;&#1072;&#1074;&#1085;&#1080;&#1074;&#1072;&#1085;&#1080;&#1077; &#1087;&#1086; &#1083;&#1077;&#1074;&#1086;&#1084;&#1091; &#1082;&#1088;&#1072;&#1102; */
+    border: 5px #6495ed groove;
+    margin: 3px 3px 3px 0;
+
+}
+
+.text1 {
+  text-align: center;
+  font: normal normal normal 22px Comic Sans MS;
+  color: #fffae5;
+  text-shadow: 4px 5px 1px rgba(0, 0, 0, 0.56);
+}
+
+.text2 {
+  margin-left: 60px;
+  font: normal normal normal 22px Comic Sans MS;
+  color: #fffae5;
+  text-shadow: 4px 5px 1px rgba(0, 0, 0, 0.56);
+    
+}
+
+.text3 {
+  font: normal normal normal 22px Comic Sans MS;
+  color: #fffae5;
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.56);
+  text-decoration: none;
+}
+
+
+#counter, #score, #cards_left {
+    text-align: center;
+    padding: 3px;
+    margin: 2px;
+    width: 60px;
+    height: 50px;
+    border-radius: 4px;
+    color: #fffae5; /*цвет очков*/
+    background-color: #d5713f; /* цвет фона */
+    font: bold normal normal 18px Comic Sans MS;
+    
+}
+
+#butt_help, #butt_result {
+    text-align: center;
+    margin-bottom: 8px; 
+    padding: 1px;
+    width: 190px;
+    height: 32px;
+    border-radius: 4px;
+    color: #fffae5; /*цвет очков*/
+    background-color: #eba16c; /* цвет фона */
+    font: bold normal normal 18px Comic Sans MS;
+    box-shadow: 0 -2px #bf8b67 inset;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#replay, #butt_add {
+    text-align: center;
+    padding-left: 2px;
+    margin: 4px;
+    width: 60px;
+    height: 54px;
+    border-radius: 4px;
+    color: #fffae5; /*цвет очков*/
+    background-color: #eba16c; /* цвет фона */
+    font: bold normal normal 34px Comic Sans MS;
+    box-shadow: 0 -3px #bf8b67 inset;
+    transition: 0.2s;
+    cursor: pointer;
+} 
+
+#bg {
+    background-color: #888376;
+    opacity: 0.3;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 953px;
+    height: 800px;
+    display: none;
+}
+
+#menu {
+  position: absolute;
+  top: 30px;
+  left: 120px;
+  padding-left: 16px;
+  padding-right: 26px;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  color: #5d5d5d;
+  width: 180px;
+  height: 26px;
+}
+
+#option {
+  position: absolute;
+  border-radius: 4px;
+  background-color: #eaeaea;
+  color: #eaeaea;
+  width: 110px;
+  height: 26px;
+  left: 121px;
+  top: 31px;
+  transition-property: left;
+  transition-duration: 0.4s;
+}
+
+#study {
+  position: absolute;
+  top: -710px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1074;&#1077;&#1088;&#1093;&#1091;*/
+  left: 34px; /*&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1086;&#1090;&#1089;&#1090;&#1091;&#1087;&#1080;&#1090;&#1100; &#1089;&#1083;&#1077;&#1074;&#1072;*/
+  width: 860px;
+  height: 600px;
+  border: 7px double #d7973d;
+  border-radius: 20px;
+  color: #5d5d5d;
+  background-color: #ffffff;
+  opacity: 0.99;
+  box-shadow: 4px 4px 5px rgba(20, 20, 20, 0.6);
+  padding-left: 10px;
+  transition-property: top;
+  transition-duration: 0.7s;
+}

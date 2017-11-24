@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            body {
+                font: 150% Arial;
+                color: #16181e;
+                margin: 0;
+                margin-left: -2px;
+                padding: 0;
+                transition: margin-left 1s;
+                background: #ffffff;
+            }
+            
+            
+            .arrow {
+                cursor: pointer;
+                margin-bottom: 50px;
+                height: 50px;
+                width: 50px;
+            }
+             
+            #result, #result1, #result2, #result3 {
+                color: #ffffff;
+            }
+            
+            #question {
+                position:relative;
+                overflow: visible;
+            }
+            
+            #question span {
+                display: none;
+                top: -80px;
+                left: 10px;
+                position:absolute;
+            }
+            
+            #question:hover span{
+                display: block;
+            }
+        </style>
+        <script type="text/javascript">
+            var right = 1;
+            var right1 = 0;
+            var right2 = 0;
+            var right3 = 1;
+            function check_easy(answer) {
+                result.style.color = '#16181e';
+                if (answer == right){
+                    if (right) {
+                        result.innerHTML = '<b> Верно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script1.png" class = "script"></span> </span>'
+                    } else {
+                        result.innerHTML = '<b> Верно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script1.png" class = "script"></span> </span>'
+                    }
+                } else {
+                    if (right) {
+                        result.innerHTML = '<b> Неверно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script1.png" class = "script"></span> </span>'
+                    } else {
+                        result.innerHTML = '<b> Неверно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script1.png" class = "script"></span> </span>'
+                    }
+                }
+            }
+            
+            function check_easy1(answer) {
+                result1.style.color = '#16181e';
+                if (answer == right1){
+                    if (right1) {
+                        result1.innerHTML = '<b> Верно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "356" height = "52" src = "img/script2.1.png" class = "script"></span> </span>'
+                    } else {
+                        result1.innerHTML = '<b> Верно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "356" height = "52" src = "img/script2.1.png" class = "script"></span> </span>'
+                    }
+                } else {
+                    if (right1) {
+                        result1.innerHTML = '<b> Неверно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "350" height = "52" src = "img/script2.1.png" class = "script"></span> </span>'
+                    } else {
+                        result1.innerHTML = '<b> Неверно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "350" height = "52" src = "img/script2.1.png" class = "script"></span> </span>'
+                    }
+                }
+            }
+            
+            function check_easy2(answer) {
+                result2.style.color = '#16181e';
+                if (answer == right2){
+                    if (right2) {
+                        result2.innerHTML = '<b> Верно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "356" height = "52" src = "img/script2.2.png" class = "script"></span> </span>'
+                    } else {
+                        result2.innerHTML = '<b> Верно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "356" height = "52" src = "img/script2.2.png" class = "script"></span> </span>'
+                    }
+                } else {
+                    if (right2) {
+                        result2.innerHTML = '<b> Неверно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "350" height = "52" src = "img/script2.2.png" class = "script"></span> </span>'
+                    } else {
+                        result2.innerHTML = '<b> Неверно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img width = "350" height = "52" src = "img/script2.2.png" class = "script"></span> </span>'
+                    }
+                }
+            }
+            
+            function check_easy3(answer) {
+                result3.style.color = '#16181e';
+                if (answer == right3){
+                    if (right3) {
+                        result3.innerHTML = '<b> Верно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script2.png" class = "script"></span> </span>'
+                    } else {
+                        result3.innerHTML = '<b> Верно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script2.png" class = "script"></span> </span>'
+                    }
+                } else {
+                    if (right3) {
+                        result3.innerHTML = '<b> Неверно! </b> Это сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script2.png" class = "script"></span> </span>'
+                    } else {
+                        result3.innerHTML = '<b> Неверно! </b> Это НЕ сет. <span id = "question"> <img width = "17" height = "17" src = "img/question.png" id = "question"> <span> <img src = "img/script2.png" class = "script"></span> </span>'
+                    }
+                }
+            }
+            
+            function next(n){
+                document.body.style.marginLeft = -(n+1) * 850;
+            }
+             
+            function prev(n){
+                document.body.style.marginLeft = -(n-1) * 850;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <table width = '5100'><tr>
+            <td width = '850'>
+                <b>Что такое СЕТ? </b> <br/>
+                СЕТ – это набор из трёх карточек: либо ОДИНАКОВЫХ, либо РАЗНЫХ по каждому из четырёх признаков.
+                <br/>
+                Четыре признака:
+                <ul>
+                    <li><b>Количество: </b>на каждой карте есть один, два или три символа</li>
+                    <li><b>Тип символов: </b>овалы, ромбы или волны</li>
+                    <li><b>Цвет: </b>символы могут быть красные, зелёные или фиолетовые</li>
+                    <li><b>Заполнение: </b>символы могут быть пыстые, заштрихованные или закрашенные</li>
+                </ul>
+                Каждый признак рассматривается по отдельности, и он должен быть либо ОДИНАКОВЫМ, либо РАЗНЫМ для всех трёх карточек. <br/> <br/>
+                <img src = 'img/examples.png' height = 280 width = 680 align = 'center'> <br/>
+                <img src = 'img/right.png' align = 'right' class = 'arrow' onClick = 'next(0)'>
+            </td>
+            
+            <td  width = '850'> 
+                <br/>
+                <h3 align = 'middle'> Это сет? </h3> <br/> <br/>
+                <img src = 'img/0110.gif' width = '150' height ='208' style = "float:right;  margin: 2px 200px 2px 2px"> <img src = 'img/0121.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px"> <img src = 'img/0102.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px">
+                <br/><br/><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <p align = 'middle'> <img src = 'img/notok.gif' width = '50' height = '50' style = 'margin-right: 10px; cursor: pointer' onClick = 'check_easy(0)'> <img src = 'img/ok.gif' width = '50' height = '40' style = 'margin-left: 10px; cursor: pointer' onClick = 'check_easy(1)'> </p>
+                <p align = 'middle' id = 'result'>    text              </p> 
+                <br/> <br/> <br/> 
+                <img src = 'img/left.png' align = 'left' class = 'arrow' onClick = 'prev(1)'>
+                <img src = 'img/right.png' align = 'right' class = 'arrow' onClick = 'next(1)'>
+            
+            </td>
+            
+            <td  width = '850'>
+                <br/>
+                <h3 align = 'middle'> Это сет? </h3> <br/> <br/>
+                <img src = 'img/2011.gif' width = '150' height ='208' style = "float:right;  margin: 2px 200px 2px 2px"> <img src = 'img/2111.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px"> <img src = 'img/2201.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px">
+                <br/><br/><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/><p align = 'middle'> <img src = 'img/notok.gif' width = '50' height = '50' style = 'margin-right: 10px; cursor: pointer' onClick = 'check_easy1(0)'> <img src = 'img/ok.gif' width = '50' height = '40' style = 'margin-left: 10px; cursor: pointer' onClick = 'check_easy1(1)'> </p>
+                <p align = 'middle' id = 'result1'>    text              </p> 
+                <br/> <br/> <br/> 
+                <img src = 'img/left.png' align = 'left' class = 'arrow' onClick = 'prev(2)'>
+                <img src = 'img/right.png' align = 'right' class = 'arrow' onClick = 'next(2)'>
+            </td>
+            
+            <td  width = '850'>
+                <br/>
+                <h3 align = 'middle'> Это сет? </h3> <br/> <br/>
+                <img src = 'img/0210.gif' width = '150' height ='208' style = "float:right;  margin: 2px 200px 2px 2px"> <img src = 'img/1121.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px"> <img src = 'img/2102.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px">
+                <br/><br/><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <p align = 'middle'> <img src = 'img/notok.gif' width = '50' height = '50' style = 'margin-right: 10px; cursor: pointer' onClick = 'check_easy2(0)'> <img src = 'img/ok.gif' width = '50' height = '40' style = 'margin-left: 10px; cursor: pointer' onClick = 'check_easy2(1)'> </p>
+                <p align = 'middle' id = 'result2'>    text              </p> 
+                <br/> <br/> <br/> 
+                <img src = 'img/left.png' align = 'left' class = 'arrow' onClick = 'prev(3)'>
+                <img src = 'img/right.png' align = 'right' class = 'arrow' onClick = 'next(3)'>
+            </td>
+            
+            <td  width = '850'>
+                <br/>
+                <h3 align = 'middle'> Это сет? </h3> <br/> <br/>
+                <img src = 'img/1012.gif' width = '150' height ='208' style = "float:right;  margin: 2px 200px 2px 2px"> <img src = 'img/0012.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px"> <img src = 'img/2012.gif' width = '150' height ='208' style = "float:right;  margin: 2px 2px 2px 2px">
+                <br/><br/><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <p align = 'middle'> <img src = 'img/notok.gif' width = '50' height = '50' style = 'margin-right: 10px; cursor: pointer' onClick = 'check_easy3(0)'> <img src = 'img/ok.gif' width = '50' height = '40' style = 'margin-left: 10px; cursor: pointer' onClick = 'check_easy3(1)'> </p>
+                <p align = 'middle' id = 'result3'>    text              </p> 
+                <br/> <br/> <br/> 
+                <img src = 'img/left.png' align = 'left' class = 'arrow' onClick = 'prev(4)'>
+                <img src = 'img/right.png' align = 'right' class = 'arrow' onClick = 'next(4)'>
+            </td>
+            
+            <td  width = '850'>
+                <p align = 'center'> Отлично! Вы готовы к игре! Теперь вашей задачей будет найти СЕТ среди 12 карт на поле как можно быстрее! </p> <br/>
+                <img style = 'display:block; margin:0 auto' src = 'img/animation.gif' height = '413'>
+                <br/>  <br/>
+                <img src = 'img/left.png' align = 'left' class = 'arrow' onClick = 'prev(5)'>
+            </td>
+        </tr> </table>
+    </body>
+</html>
