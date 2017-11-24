@@ -4,20 +4,45 @@
 <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- &#1087;&#1086;&#1076;&#1082;&#1083;&#1102;&#1095;&#1072;&#1077;&#1084; xd_connection.js -->
-    <script src="//vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
-    <script type="text/javascript">
-        VK.init(function() {
-            VK.api('users.get', {fields: 'photo_50', https: '1'}, function(data) {
-                if (data.response) {
-                    document.getElementById('users_id').value = data.response[0].id;
-                    document.getElementById('users_name').value = data.response[0].first_name + ' ' + data.response[0].last_name;
-                    document.getElementById('photo_url').value = data.response[0].photo_50;
-                }
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '398899940526365',
+          xfbml      : true,
+          version    : 'v2.11'
+        });
+    
+        function onLogin(response) {
+          if (response.status == 'connected') {
+            FB.api('/me/?fields=picture,name', function(data) {
+              document.getElementById('users_id').value = data.id;
+              document.getElementById('users_name').value = data.name;
+              document.getElementById('photo_url').value = data.picture.data.url;
             });
-
-        }, function() {
-            alert("ERROR");
-        }, '5.44');
+          }
+        }
+        
+        FB.getLoginStatus(function(response) {
+          // Check login status on load, and if the user is
+          // already logged in, go directly to the welcome message.
+          if (response.status == 'connected') {
+            onLogin(response);
+          } else {
+            // Otherwise, show Login dialog first.
+            FB.login(function(response) {
+              onLogin(response);
+            }, {scope: 'public_profile, user_photos'});
+          }
+        });
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
@@ -34,9 +59,9 @@
         <td width="175"> <span onClick = 'chose_alert()' style = 'cursor: pointer'>  <p class = 'text2'> Режим <img src = "img/point.png" style = "valign: bottom; margin-left: 10px"> </p> </span>
             <div align = 'left' id = 'chose'>
                 <?php
-                    $viewer_id = $_GET['viewer_id'];
-                    echo "<a class = 'text3' href = 'index.php?viewer_id=".$_GET['viewer_id']."'> Классика </a> <br/>";
-                    echo "<a class = 'text3' href = 'blitz.php?viewer_id=".$_GET['viewer_id']."'> Блиц </a> <br/>";
+                    $viewer_id = $_GET['#users_id'];
+                    echo "<a class = 'text3' href = 'index.php?viewer_id=".$viewer_id."'> Классика </a> <br/>";
+                    echo "<a class = 'text3' href = 'blitz.php?viewer_id=".$viewer_id."'> Блиц </a> <br/>";
                 ?>
             </div> </td>
         <td width="51"></td>
@@ -132,12 +157,12 @@
             }
             mysqli_set_charset($link, "utf8");
             mysqli_select_db($link, "db");
+            
+            $viewer_id = $_GET['#users_id'];
         
-            $viewer_id = $_GET['viewer_id'];
-        
-            $data1 = mysqli_query($link, "SELECT * FROM `results` WHERE `id` = '$viewer_id'");
+            $data1 = mysqli_query($link, "SELECT * FROM `results_facebook` WHERE `id` = '$viewer_id'");
             $row1 = mysqli_fetch_array($data1, MYSQLI_ASSOC);
-            $data2 = mysqli_query($link, "SELECT * FROM `blitz` WHERE `id` = '$viewer_id'");
+            $data2 = mysqli_query($link, "SELECT * FROM `blitz_facebook` WHERE `id` = '$viewer_id'");
             $row2 = mysqli_fetch_array($data2, MYSQLI_ASSOC);
             echo '<b>Ваш рекорд: ' . $row1[score] . ' очк. </b> в классической игре и <b>' . $row2[score] . ' очк.</b> в блиц-режиме.';
     ?>
